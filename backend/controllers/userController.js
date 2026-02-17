@@ -26,3 +26,15 @@ exports.getUserById = (req, res) => {
     res.json(user);
 }
 
+exports.updateUser = (req, res) => {
+    const { name} = req.body || {};
+    const user = users.find(u => u.id === req.params.id);
+
+    if (!user) {
+        return res.json({ message: 'User not found' });
+    }
+
+    user.name = name;
+    res.json(user);
+}
+
