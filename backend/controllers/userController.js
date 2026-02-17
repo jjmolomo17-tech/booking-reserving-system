@@ -17,7 +17,7 @@ exports.getUser = (req, res ) =>{
 }
 
 exports.getUserById = (req, res) => {
-    const user = user.find(u => u.id === req.params.id);
+    const user = users.find(u => u.id === req.params.id);
 
     if(user) {
         return res.json({ message: 'User not found' });
