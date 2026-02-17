@@ -20,7 +20,7 @@ exports.getUserById = (req, res) => {
     const user = user.find(u => u.id === req.params.id);
 
     if(user) {
-        return res.json({ messages: 'User not found' });
+        return res.json({ message: 'User not found' });
     }
 
     res.json(user);
