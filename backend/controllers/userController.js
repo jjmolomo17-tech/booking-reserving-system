@@ -1,11 +1,7 @@
 const user = []; 
 
 exports.createUser = (req, res ) => {
-    const { name }= req.body || {};
-
-    if (!name) {
-        return res.status(400).json({error: 'Name is required.'});
-    }
+    const { name } = req.body || {};
 
     const user = {
         id: Date.now().toString(),
@@ -14,5 +10,9 @@ exports.createUser = (req, res ) => {
 
     users.push(user);
     res.status(201).json(user)
+}
+
+exports.getUser = (req, res ) =>{
+        res.json(users);
 }
 
