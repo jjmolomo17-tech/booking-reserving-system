@@ -50,6 +50,6 @@ exports.deleteUser = (req, res) => {
     } 
 
     users.splice(index, 1);
-    res.json{( message: 'User deleted succesfully' )};
+    res.json({ message: 'User deleted succesfully' });
 }
 
