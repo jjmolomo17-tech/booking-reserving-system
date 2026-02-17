@@ -31,7 +31,11 @@ exports.updateUser = (req, res) => {
     const user = users.find(u => u.id === req.params.id);
 
     if (!user) {
-        return res.json({ message: 'User not found' });
+        return res.status(404).json({ message: 'User not found' });
+    }
+
+    if (!name) {
+        return res.status(400).json({message: 'Name is required' });
     }
 
     user.name = name;
